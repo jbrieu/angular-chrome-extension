@@ -1,0 +1,26 @@
+.grid {
+  display: grid;
+  grid-template-areas: "header header" "main main" "footer footer";
+  grid-gap: 1em;
+  min-width: 35em;
+  min-height: 33em;
+}
+
+.grid > * {
+  background-color: #eee;
+}
+
+header {
+  grid-area: header;
+  min-height: 5em;
+}
+
+main {
+  grid-area: main;
+  min-height: 25em;
+}
+
+footer {
+  grid-area: footer;
+  min-height: 5em;
+}

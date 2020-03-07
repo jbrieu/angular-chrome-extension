@@ -1,0 +1,11 @@
+<h2>Propietaires</h2>
+
+<ul class="owners">
+  <li *ngFor="let owner of owners"
+    [class.selected]="owner === selectedOwner"
+    (click)="onSelect(owner)">
+    {{owner.name}}
+  </li>
+</ul>
+<app-companies [companies]="selectedOwner ? selectedOwner.companies : getCompaniesFromAllOwners()"></app-companies>
+

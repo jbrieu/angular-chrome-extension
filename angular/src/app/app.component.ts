@@ -3,6 +3,8 @@ import { Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { TAB_ID } from './tab-id.injector';
+import { Newspaper } from './newspaper';
+import { NEWSPAPERSINDEX } from './mock-newspaper';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +13,12 @@ import { TAB_ID } from './tab-id.injector';
 })
 // tslint:disable:variable-name
 export class AppComponent {
-  private readonly _message = new Subject<string>();
+  private readonly _domain = new Subject<String>();
+
+  newspapers = NEWSPAPERSINDEX;
 
   readonly tabId = this._tabId;
-  readonly message$ = this._message
+  readonly domain$ = this._domain
     .asObservable()
     .pipe(tap(() => setTimeout(() => this._changeDetector.detectChanges())));
 
@@ -23,13 +27,13 @@ export class AppComponent {
     private readonly _changeDetector: ChangeDetectorRef
   ) {}
 
-  onClick(): void {
-    chrome.tabs.sendMessage(this.tabId, 'request', message => {
-      this._message.next(
-        chrome.runtime.lastError
-          ? `The current page is protected by the browser or try to refresh the current page...`
-          : message
-      );
-    });
-  }
+  ngOnInit(){
+      chrome.tabs.sendMessage(this.tabId, 'request', domain => {
+        this._domain.next(
+          chrome.runtime.lastError
+            ? 'Domain not available yet'
+            : domain
+        );
+      });
+ }
 }

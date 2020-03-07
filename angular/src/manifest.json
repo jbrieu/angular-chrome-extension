@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
-  "name": "Angular Chrome Extension",
-  "short_name": "Angular Chrome Extension",
+  "name": "C'est qui le patron ?",
+  "short_name": "C'est qui le patron ?",
   "version": "1.0.0",
-  "description": "Angular Chrome Extension scaffold project",
+  "description": "Qui possède les medias ?",
   "permissions": ["tabs"],
   "browser_action": {
     "default_popup": "index.html",
-    "default_title": "Angular Chrome Extension"
+    "default_title": "C'est qui le patron ?"
   },
   "content_scripts": [
     {
