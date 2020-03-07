@@ -5,10 +5,10 @@ import { Company } from '../company';
 @Component({
   selector: 'app-owners',
   templateUrl: './owners.component.html',
-  styleUrls: ['./owners.component.css']
+  styleUrls: ['./owners.component.scss']
 })
 export class OwnersComponent implements OnInit {
-  @Input() selectedOwner: Owner;
+  selectedOwner: Owner;
   @Input() owners: Owner [];
 
   constructor() { }
@@ -19,7 +19,7 @@ export class OwnersComponent implements OnInit {
   onSelect(owner: Owner): void{
     if (this.selectedOwner != owner)
     {
-        this.selectedOwner = owner;
+      this.selectedOwner = owner;
     }else
     {
       this.selectedOwner = null;

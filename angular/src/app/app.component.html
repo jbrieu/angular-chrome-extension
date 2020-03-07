@@ -1,6 +1,8 @@
 <div class="grid">
-  <header>C'est Qui Le Patron?</header>
-  <main><app-newspaper [newspaper]="newspapers[(domain$ | async)]"></app-newspaper></main>
+  <header>C'est Qui Le Patron? {{domain$ | async}}</header>
+  <main>
+    <app-newspaper [newspaper]="getNewspaper()"></app-newspaper>
+  </main>
   <footer><p>{{domain$ | async}}<p></footer>
 </div>
 

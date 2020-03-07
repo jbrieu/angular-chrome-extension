@@ -3,7 +3,9 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { TAB_ID } from './app/tab-id.injector';
+import { TAB_URL } from './app/tab-url.injector';
 import { environment } from './environments/environment';
+
 
 chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
   if (environment.production) {
@@ -11,10 +13,24 @@ chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
   }
 
   const tab = [...tabs].pop();
-  const { id: tabId } = tab;
+  // const { url: tabUrl } = tab.url;
 
   // provides the current Tab ID so you can send messages to the content page
-  platformBrowserDynamic([{ provide: TAB_ID, useValue: tabId }])
+  platformBrowserDynamic([{ provide: TAB_URL, useValue: tab.url }])
     .bootstrapModule(AppModule)
     .catch(error => console.error(error));
 });
+
+// chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+//   if (environment.production) {
+//     enableProdMode();
+//   }
+
+//   const tab = [...tabs].pop();
+//   const { id: tabId } = tab;
+
+//   // provides the current Tab ID so you can send messages to the content page
+//   platformBrowserDynamic([{ provide: TAB_ID, useValue: tabId }])
+//     .bootstrapModule(AppModule)
+//     .catch(error => console.error(error));
+// });

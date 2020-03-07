@@ -1,8 +1,11 @@
 <h3>Entreprises</h3>
 
 <ul class="companies">
-  <li *ngFor="let company of companies">
-    {{company.name}}
+  <li *ngFor="let company of companies"
+   (click)="onSelect(company)"
+   [class.selected]="company === selectedCompany"
+   >
+    {{company.name}} ({{counter}})
   </li>
 </ul>
 
