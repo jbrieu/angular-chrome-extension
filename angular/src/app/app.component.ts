@@ -13,7 +13,6 @@ import { Newspaper } from './newspaper';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-// tslint:disable:variable-name
 export class AppComponent {
   private readonly _domain = new Subject<String>();
   newspapers = NEWSPAPERSINDEX;
