@@ -10,7 +10,6 @@ import { Company } from '../company'
 export class CompaniesComponent implements OnInit {
   @Input() companies : Company[];
   selectedCompany: Company;
-  counter = 0;
 
   constructor() { }
 
@@ -18,7 +17,6 @@ export class CompaniesComponent implements OnInit {
   }
 
   onSelect(company: Company): void{
-    this.counter = this.counter + 2;
     this.selectedCompany = company;
   }
 

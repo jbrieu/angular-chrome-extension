@@ -14,7 +14,7 @@ import { Newspaper } from './newspaper';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  private readonly _domain = new Subject<String>();
+  // private readonly _domain = new Subject<String>();
   newspapers = NEWSPAPERSINDEX;
   currentNewspaper: Newspaper;
 

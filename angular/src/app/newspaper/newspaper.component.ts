@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { Newspaper } from '../newspaper';
-import { Owner } from '../owner';
 
 @Component({
   selector: 'app-newspaper',
