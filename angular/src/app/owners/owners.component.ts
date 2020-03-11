@@ -28,6 +28,7 @@ export class OwnersComponent implements OnInit {
     }
   }
 
+
   getCompaniesForOwner(owner: Owner): Company[] {
     return owner.companiesIds.map(id => STATIC_DATA["companiesById"][id]);
   }

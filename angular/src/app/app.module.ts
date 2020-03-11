@@ -7,6 +7,7 @@ import { OwnersComponent } from './owners/owners.component';
 import { NewspaperComponent } from './newspaper/newspaper.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { OwnerDetailComponent } from './owner-detail/owner-detail.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { OwnerDetailComponent } from './owner-detail/owner-detail.component';
     OwnersComponent,
     NewspaperComponent,
     CompaniesComponent,
-    OwnerDetailComponent
+    OwnerDetailComponent,
+    FooterComponent
   ],
   imports: [
     AppRoutingModule,

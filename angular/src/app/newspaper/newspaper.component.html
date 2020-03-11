@@ -1,4 +1,7 @@
 <div *ngIf="newspaper">
   <h1>{{newspaper.name}}</h1>
+  <div *ngIf="newspaper?.domain">
+    <img src="http://logo.clearbit.com/{{newspaper.domain}}?size=50">
+  </div>
   <app-owners [owners]="getOwners()"></app-owners>
 </div>

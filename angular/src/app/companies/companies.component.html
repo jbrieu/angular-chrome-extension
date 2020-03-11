@@ -1,8 +1,11 @@
 <h3>Entreprises</h3>
-
+<div>
 <ul class="companies">
   <li *ngFor="let company of companies">
-    {{company.name}}
+    <a href="http://{{company.domain}}" target="_blank">
+      <img src="http://logo.clearbit.com/{{company.domain}}?size=50">
+      <p>{{company.name}}</p>
+    </a>
   </li>
 </ul>
-
+</div>

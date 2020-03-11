@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Company } from '../company'
+import { Company } from '../company';
+import { STATIC_DATA } from '../static-data';
+import { Owner } from '../owner';
 
 @Component({
   selector: 'app-companies',
@@ -13,5 +15,9 @@ export class CompaniesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getCompanyOwners(company: Company): Owner[]{
+   return company.ownersIds.map(id => STATIC_DATA["ownersById"][id]);
   }
 }
