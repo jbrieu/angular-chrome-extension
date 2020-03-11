@@ -9,21 +9,9 @@ import { Company } from '../company'
 
 export class CompaniesComponent implements OnInit {
   @Input() companies : Company[];
-  selectedCompany: Company;
 
   constructor() { }
 
   ngOnInit() {
   }
-
-  onSelect(company: Company): void{
-    if (this.selectedCompany != company)
-    {
-      this.selectedCompany = company;
-    }else
-    {
-      this.selectedCompany = null;
-    }
-  }
-
 }

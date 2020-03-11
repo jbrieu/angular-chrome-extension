@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { Owner } from '../owner';
 import { Company } from '../company';
 import { STATIC_DATA } from '../static-data';
@@ -8,6 +8,7 @@ import { STATIC_DATA } from '../static-data';
   templateUrl: './owners.component.html',
   styleUrls: ['./owners.component.scss']
 })
+
 export class OwnersComponent implements OnInit {
   selectedOwner: Owner;
   @Input() owners: Owner [];
