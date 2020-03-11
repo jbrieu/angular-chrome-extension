@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Owner } from '../owner';
 import { Company } from '../company';
+import { STATIC_DATA } from '../static-data';
 
 @Component({
   selector: 'app-owners',
@@ -26,10 +27,16 @@ export class OwnersComponent implements OnInit {
     }
   }
 
+  getCompaniesForOwner(owner: Owner): Company[] {
+    return owner.companiesIds.map(id => STATIC_DATA["companiesById"][id]);
+  }
+
   getCompaniesFromAllOwners(): Company[]{
     var allCompanies = [];
     this.owners.forEach(owner => {
-      allCompanies= allCompanies.concat(owner.companies);
+      allCompanies = allCompanies.concat(owner.companiesIds.map(id => {
+        return STATIC_DATA["companiesById"][id];
+      }));
     });
     return allCompanies;
   }

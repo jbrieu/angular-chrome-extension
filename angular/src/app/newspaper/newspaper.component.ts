@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { Newspaper } from '../newspaper';
+import { Owner } from '../owner';
+import { STATIC_DATA } from '../static-data';
 
 @Component({
   selector: 'app-newspaper',
@@ -12,6 +14,10 @@ export class NewspaperComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getOwners(): Owner[]{
+    return this.newspaper.ownersIds.map(id => STATIC_DATA["ownersById"][id]);
   }
 
 }

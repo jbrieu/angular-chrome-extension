@@ -8,6 +8,9 @@
   </li>
 </ul>
 
-<app-companies [companies]="selectedOwner ? selectedOwner.companies : getCompaniesFromAllOwners()"></app-companies>
+<app-companies [companies]="selectedOwner ? getCompaniesForOwner(selectedOwner) : getCompaniesFromAllOwners()"></app-companies>
+<div *ngIf="selectedOwner">
+  <app-owner-detail [owner]="selectedOwner"></app-owner-detail>
+</div>
 
 

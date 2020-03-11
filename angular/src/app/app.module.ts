@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { OwnersComponent } from './owners/owners.component';
 import { NewspaperComponent } from './newspaper/newspaper.component';
 import { CompaniesComponent } from './companies/companies.component';
+import { OwnerDetailComponent } from './owner-detail/owner-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OwnersComponent,
     NewspaperComponent,
-    CompaniesComponent
+    CompaniesComponent,
+    OwnerDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@ import { tap } from 'rxjs/operators';
 
 import { TAB_ID } from './tab-id.injector';
 import { TAB_URL } from './tab-url.injector';
-import { NEWSPAPERSINDEX } from './mock-newspaper';
+import { STATIC_DATA } from './static-data';
 import { Newspaper } from './newspaper';
 
 
@@ -15,7 +15,6 @@ import { Newspaper } from './newspaper';
 })
 export class AppComponent {
   // private readonly _domain = new Subject<String>();
-  newspapers = NEWSPAPERSINDEX;
   currentNewspaper: Newspaper;
 
   // readonly tabId = this._tabId;
@@ -44,7 +43,7 @@ export class AppComponent {
   // console.error(this.tabUrl);
   var matches = this.tabUrl.match(/^https?\:\/\/([^\/?#]+)/);
   let domain = matches && matches[1];  // domain will be null if no match is found
-  return this.newspapers[domain];
+  return STATIC_DATA["newspapersByURL"][domain];
  }
 
 }
