@@ -17,7 +17,13 @@ export class CompaniesComponent implements OnInit {
   }
 
   onSelect(company: Company): void{
-    this.selectedCompany = company;
+    if (this.selectedCompany != company)
+    {
+      this.selectedCompany = company;
+    }else
+    {
+      this.selectedCompany = null;
+    }
   }
 
 }
