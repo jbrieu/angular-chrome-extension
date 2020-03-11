@@ -21,7 +21,7 @@ export const STATIC_DATA = {
       companiesIds: ["2"]
       }
   },
-"newspapersByURL" : {
+"newspapersByDomain" : {
   'www.lefigaro.fr': {  id:1,
     name: 'Le Figaro',
     ownersIds: [ "1"]

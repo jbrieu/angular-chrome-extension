@@ -43,7 +43,7 @@ export class AppComponent {
   // console.error(this.tabUrl);
   var matches = this.tabUrl.match(/^https?\:\/\/([^\/?#]+)/);
   let domain = matches && matches[1];  // domain will be null if no match is found
-  return STATIC_DATA["newspapersByURL"][domain];
+  return STATIC_DATA["newspapersByDomain"][domain];
  }
 
 }
