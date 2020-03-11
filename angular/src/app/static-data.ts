@@ -10,7 +10,8 @@ export const STATIC_DATA = {
   },
   "ownersById": {
     "1": {
-      name: 'Famille Dassault',
+      name: 'Serge Dassault',
+      pictureURL: "http://commons.wikimedia.org/wiki/Special:FilePath/Serge%20Dassault%20crop.jpg",
       url: "https://data.bnf.fr/ark:/12148/cb11898698p",
       companiesIds: ["1"]
     },
@@ -22,7 +23,7 @@ export const STATIC_DATA = {
   "newspapersByDomain": {
     'www.lefigaro.fr': {
       name: 'Le Figaro',
-      ownersIds: ["1", "2"]
+      ownersIds: ["1"]
     },
     'www.nouvelobs.com': {
       name: 'L\'OBS',
